@@ -4,7 +4,7 @@ This is a project scaffold to help you quickly get up and running with a Python 
 modern, industry standard tools and practices.
 
 The template comes with an opinionated VS Code settings configuration file to help ensure
-the best integration with the tools here, e.g. 
+the best integration with the tools here, e.g.
 
 - autocompletion
 - syntax highlighting
@@ -31,7 +31,7 @@ cookiecutter https://github.com/mlops-club/cloud-course-python-package-template.
 ### Notable comments about the file structure
 
 - `src/<package-name>/` - contains the package code. Using an `src/` folder is a best practice.
-- `tests/` has minimal boilerplate that 
+- `tests/` has minimal boilerplate that
   - Makes fixtures work using `conftest.py`
   - Makes imports such as `from tests.my_file import thing` (via some *light* PYTHONPATH hacking, adding `tests/..` to the PYTHONPATH)
   - Contains a `unit_test/` and `functional_test/` directory whose structure is meant to mirror that of `src/<package>/`
@@ -43,22 +43,22 @@ cookiecutter https://github.com/mlops-club/cloud-course-python-package-template.
 
 This project template makes use of
 
-- [`setuptools`](https://setuptools.pypa.io/en/latest/userguide/index.html) for packaging; a `pip` + `venv` + `setuptools` workflow is encouraged as it is considered the 
+- [`setuptools`](https://setuptools.pypa.io/en/latest/userguide/index.html) for packaging; a `pip` + `venv` + `setuptools` workflow is encouraged as it is considered the
   most officially supported, "vanilla" way to manage Python packages.
 - [`pylint`](https://pylint.readthedocs.io/en/stable/) and [`flake8`](https://flake8.pycqa.org/en/latest/) for linting. [`ruff`](https://docs.astral.sh/ruff/) is up and coming, but does not yet support all the plugins and rulesets
   that these two do. However, we love `ruff` and are excitedly watching its progress.
   - [`flake8`](https://flake8.pycqa.org/en/latest/) supports plugins, and we are using the following
     - [`flake8-docstrings`](https://pypi.org/project/flake8-docstrings/) - ensure that functions have docstrings
     - [`flake8-pyproject`](https://pypi.org/project/Flake8-pyproject/) - necessary for `flake8` to be configured using a `pyproject.toml` file
-    - [`radon`](https://radon.readthedocs.io/en/latest/intro.html) - a standalone tool for measuring [cyclomatic complexity](https://radon.readthedocs.io/en/latest/intro.html#cyclomatic-complexity). 
-  
+    - [`radon`](https://radon.readthedocs.io/en/latest/intro.html) - a standalone tool for measuring [cyclomatic complexity](https://radon.readthedocs.io/en/latest/intro.html#cyclomatic-complexity).
+
       Radon out-of-the-box is a `flake8` plugin which enables VS Code and PyCharm to display red squiggly lines on functions whose complexity score is too high.
 - [`black`](https://black.readthedocs.io/en/stable/) for formatting. Note that the line length is set to `119` for `black` and other tools that consider line length.
 - [`pytest`](https://docs.pytest.org/en/8.2.x/) for unit testing since it is the industry standard testing framework
   - [`pytest-cov`](https://pytest-cov.readthedocs.io/en/latest/) for calculating coverage and displaying an HTML coverage report in the browser
 - [`pre-commit` framework](https://pre-commit.com/) - a convenient, industry-standard way to install and run `flake8`, `pylint`, and the other tools all at once--and in isolated virtual environments. See `.pre-commit-config.yaml` for the configuration.
-- `Makefile` - for running tasks, e.g. `make lint`, `make test`, `make install`. 
-  
+- `Makefile` - for running tasks, e.g. `make lint`, `make test`, `make install`.
+
   Make is unfortuanately a tool that
   comes pre-installed on most OSes, but it comes with its own scripting language which is limited and difficult to use compared to `bash`.
   It supports tab-based autocompletion when running commands and can be used to chain commands together, e.g. `make lint test build`.
@@ -67,10 +67,10 @@ This project template makes use of
   still providing the convenience of tab-based autocompletion and chaining commands together.
 
   We are not in love with `Makefile` + `run.sh`, but it has advantages over alternative workflows such as
-  
+
   - `bash` scripts are flexible. Most developers can quickly author simple bash scripts, especially with ChatGPT.
   - `Justfile` is *awesome*, but can be difficult to install in CI and most devs do not already have it installed.
-  - `PyInvoke` is a thing, but requires an initial installation of `invoke` with Python, resulting in extra steps, 
+  - `PyInvoke` is a thing, but requires an initial installation of `invoke` with Python, resulting in extra steps,
     e.g. installing in the system Python, or with `pipx`. It also has a slight learning curve over the first
     adding that much more friction to new developers joining projects.
 
@@ -84,7 +84,7 @@ This project template makes use of
 ## I need help learning about all of these tools
 
 For an in-depth, step-by-step guide on the history of Python packaging and explanations of all
-the tools used in this scaffold, you can take the Udemy course 
+the tools used in this scaffold, you can take the Udemy course
 [Taking Python to Production: A Professional Onboarding Guide](https://www.udemy.com/course/setting-up-the-linux-terminal-for-software-development/?referralCode=EE86AF0C55EE90E3C8AE) where
 we develop this template from scratch as well as many other foundational SWE skills, e.g. git, GitHub, CI/CD GitHub Actions, zsh, and testing.
 

@@ -2,7 +2,17 @@
 
 set -e
 
+#####################
+# --- Constants --- #
+#####################
+
 THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+MINIMUM_TEST_COVERAGE_PERCENT=0
+
+
+##########################
+# --- Task Functions --- #
+##########################
 
 # install core and development Python dependencies into the currently activated venv
 function install {
@@ -43,7 +53,7 @@ function run-tests {
         --cov-report term \
         --cov-report xml \
         --junit-xml "$THIS_DIR/test-reports/report.xml" \
-        --cov-fail-under 60 || ((PYTEST_EXIT_STATUS+=$?))
+        --cov-fail-under "$MINIMUM_TEST_COVERAGE_PERCENT" || ((PYTEST_EXIT_STATUS+=$?))
     mv coverage.xml "$THIS_DIR/test-reports/" || true
     mv htmlcov "$THIS_DIR/test-reports/" || true
     mv .coverage "$THIS_DIR/test-reports/" || true

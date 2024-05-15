@@ -18,12 +18,13 @@ the best integration with the tools here, e.g.
 # install cookiecutter into an isolated virtual environment
 python -m venv ./venv/
 source ./venv/bin/activate
+pip install --upgrade pip
 pip install cookiecutter
 
 # cookie cut the template, answering the prompts, e.g.
 #  - repo_name: my-awesome-package
 #  - package_import_name: my_awesome_package
-cookiecutter https://github.com/mlops-club/cloud-course-python-package-template.git
+cookiecutter https://github.com/mlops-club/cloud-course-python-package-cookiecutter.git
 ```
 
 ## What are the opinions in this template?

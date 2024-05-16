@@ -59,7 +59,13 @@ markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
 
 [tool.black]
 line-length = 119
-exclude = ["venv"]
+# regular expression ignoring multiple patterns separated by '|' and newlines
+exclude = '''
+/(
+    \.venv
+  | venv
+)/
+'''
 
 [tool.flake8]
 docstring-convention = "all"

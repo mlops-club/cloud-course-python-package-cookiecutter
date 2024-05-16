@@ -22,6 +22,10 @@
     "pylint.args": [
         "--rcfile=${workspaceFolder}/pyproject.toml"
     ],
+    // notebook settings
+    "notebook.formatOnSave.enabled": true,
+    "notebook.lineNumbers": "on",
+    // .py settings
     "[python]": {
         "editor.codeActionsOnSave": {
             "source.organizeImports": true

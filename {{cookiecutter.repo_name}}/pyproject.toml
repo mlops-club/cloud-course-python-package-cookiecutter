@@ -9,7 +9,7 @@ authors = [{ name = "<your name>", email = "some-email@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.7"
 license = { text = "MIT" }
-dependencies = ['importlib-metadata; python_version<"3.8"']
+dependencies = []
 classifiers = ["Programming Language :: Python :: 3"]
 keywords = ["one", "two"]
 
@@ -46,6 +46,7 @@ dev = ["{{cookiecutter.repo_name}}[test,release,static-code-qa]"]
 requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+# include more than only .py files in the distribution package (wheel)
 [tool.setuptools.package-data]
 {{cookiecutter.package_import_name}} = ["*.json"]
 

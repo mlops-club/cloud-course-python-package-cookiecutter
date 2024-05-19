@@ -47,6 +47,7 @@ function test:ci {
 # (example) ./run.sh test tests/test_states_info.py::test__slow_add
 function run-tests {
     PYTEST_EXIT_STATUS=0
+    rm -rf "$THIS_DIR/test-reports" || true
     python -m pytest ${@:-"$THIS_DIR/tests/"} \
         --cov "${COVERAGE_DIR:-$THIS_DIR/src}" \
         --cov-report html \
